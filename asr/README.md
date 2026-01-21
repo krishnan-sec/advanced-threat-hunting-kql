@@ -43,7 +43,7 @@ These queries are designed to support:
 ## Query List
 
 - `asr-events-count-by-rule.kql` - Rule trigger distribution + trend
-- `asr-top-triggered-rules.kql` - Top rules with optional rule mapping support
+- `asr-top-triggered-rules.kql` - Top rules with rule mapping support
 - `asr-rare-rule-triggers.kql` - Rare rules / rare devices (high signal)
 - `asr-filename-rule-correlation.kql` - Binaries and paths associated with ASR triggers
 - `asr-devices-with-unusual-asr-volume.kql` - Outlier devices by ASR activity
