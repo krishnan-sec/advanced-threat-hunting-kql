@@ -44,7 +44,7 @@ These queries are designed to support:
 
 - `asr-events-count-by-rule.kql` - Rule trigger distribution + trend
 - `asr-top-triggered-rules.kql` - Top rules with rule mapping support
-- 'asr/asr-triggered-events-detailed.kql' - Retrieve detailed ASR-triggered events
+- `asr/asr-triggered-events-detailed.kql` - Retrieve detailed ASR-triggered events
 
 ---
 
