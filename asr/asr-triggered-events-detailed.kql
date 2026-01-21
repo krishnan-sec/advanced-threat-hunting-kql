@@ -1,0 +1,15 @@
+// Title: ASR Triggered Events — Detailed View (Last 7 Days)
+// Domain: Attack Surface Reduction (ASR)
+// Objective: Retrieve detailed ASR-triggered events for investigation, triage, and reporting
+// Tables: DeviceEvents
+// MITRE: Defense Evasion (Control Enforcement Visibility)
+// Notes:
+// - Pulls all ASR-triggered events in the last 7 days (not a rarity filter).
+// - Extracts RuleId from AdditionalFields JSON.
+// - Use as a primary event feed, then pivot to process/network/file context as needed.
+
+DeviceEvents
+| where ActionType startswith "Asr" and Timestamp > ago(7d)
+| extend RuleId = tostring(parse_json(AdditionalFields).RuleId)
+| project Timestamp, DeviceName, ActionType, RuleId, FileName, FolderPath, InitiatingProcessFileName, InitiatingProcessCommandLine, AdditionalFields
+| order by Timestamp desc
